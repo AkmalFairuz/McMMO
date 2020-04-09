@@ -133,6 +133,7 @@ class McmmoForm
             $i++;
         }
         $form->setContent("Player Name | Level");
+        $form->addButton("Back");
         $form->sendToPlayer($player);
     }
 }
