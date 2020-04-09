@@ -99,7 +99,7 @@ class Main extends PluginBase implements Listener
     }
 
     public function getAll(int $type) : array {
-        return $this->database["xp"][$type];
+        return $this->database["level"][$type];
     }
 
     public function onLogin(PlayerLoginEvent $event) {
