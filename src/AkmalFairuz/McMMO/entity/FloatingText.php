@@ -58,6 +58,7 @@ class FloatingText extends Human
                 $this->sendNameTag($player);
             }
         }
+        return true;
     }
 
     public function sendNameTag(Player $player): void {
