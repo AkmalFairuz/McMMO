@@ -1,0 +1,5 @@
+name: McMMO
+api: 3.0.0
+main: AkmalFairuz\McMMO\Main
+version: 1.0.0
+author: AkmalFairuz
