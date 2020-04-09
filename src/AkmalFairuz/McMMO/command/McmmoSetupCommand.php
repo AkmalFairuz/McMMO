@@ -63,7 +63,7 @@ class McmmoSetupCommand extends PluginCommand
                 $sender->sendMessage("Usage: /mcmmoadmin setup ".implode("/" , $a)."> (to spawn floating text)");
                 return true;
             }
-            $nbt = Entity::createBaseNBT($sender->asVector3(), null, null, null);
+            $nbt = Entity::createBaseNBT($sender->asVector3(), null, $sender->yaw, $sender->pitch);
             array_keys($a);
             $nbt->setInt("type", $a[$args[1]]);
             $entity = new FloatingText($sender->level, $nbt);

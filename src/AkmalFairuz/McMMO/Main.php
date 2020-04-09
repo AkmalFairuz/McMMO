@@ -20,6 +20,7 @@ use AkmalFairuz\McMMO\command\McmmoCommand;
 use AkmalFairuz\McMMO\command\McmmoSetupCommand;
 use AkmalFairuz\McMMO\entity\FloatingText;
 use pocketmine\block\Solid;
+use pocketmine\entity\Entity;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
@@ -60,6 +61,7 @@ class Main extends PluginBase implements Listener
         $this->getServer()->getCommandMap()->register("mcmmoadmin", new McmmoSetupCommand("mcmmoadmin", $this));
         $this->database = yaml_parse(file_get_contents($this->getDataFolder() . "database.yml"));
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        Entity::registerEntity(FloatingText::class, true);
         self::$instance = $this;
     }
 
