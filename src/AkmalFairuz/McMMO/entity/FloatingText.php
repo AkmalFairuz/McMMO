@@ -48,7 +48,9 @@ class FloatingText extends Human
             $a = ["Lumberjack", "Farmer", "Excavation", "Miner", "Killer", "Combat", "Builder", "Consumer", "Archer", "Lawn Mower"];
             $l = "";
             $i = 0;
-            foreach(Main::getInstance()->getAll($this->type) as $k => $o) {
+            $lead = Main::getInstance()->getAll($this->type);
+            arsort($lead);
+            foreach($lead as $k => $o) {
                 if($i == 20) break;
                 $i++;
                 $l .= $i . ") ".$k." : ".$o."\n";
