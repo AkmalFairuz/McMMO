@@ -51,7 +51,7 @@ class FloatingText extends Human
             foreach(Main::getInstance()->getAll($this->type) as $k => $o) {
                 if($i == 20) break;
                 $i++;
-                $l .= $i . ") ".$k." : ".$o;
+                $l .= $i . ") ".$k." : ".$o."\n";
             }
             $this->setNameTag("MCMMO Leaderboard\n".$a[$this->type] . "\n\n".$l);
             foreach ($this->getViewers() as $player) {

@@ -129,7 +129,7 @@ class McmmoForm
         $i = 1;
         foreach($a as $key => $as) {
             if($i == 20) break;
-            $content .= $i.") ".$key . " : ".$as;
+            $content .= $i.") ".$key . " : ".$as."\n";
             $i++;
         }
         $form->setContent("Player Name | Level");
