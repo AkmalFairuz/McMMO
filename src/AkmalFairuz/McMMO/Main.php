@@ -205,6 +205,8 @@ class Main extends PluginBase implements Listener
     }
 
     public function onItemConsume(PlayerItemConsumeEvent $event) {
-        $this->addXp(self::CONSUMER, $event->getPlayer());
+        if($event->getPlayer()->getFood() === $event->getPlayer()->getMaxFood()) {
+            $this->addXp(self::CONSUMER, $event->getPlayer());
+        }
     }
 }
