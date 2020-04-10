@@ -20,6 +20,7 @@ use AkmalFairuz\McMMO\Main;
 use pocketmine\entity\Human;
 use pocketmine\network\mcpe\protocol\SetActorDataPacket;
 use pocketmine\Player;
+use pocketmine\utils\TextFormat;
 
 class FloatingText extends Human
 {
@@ -53,9 +54,9 @@ class FloatingText extends Human
             foreach($lead as $k => $o) {
                 if($i == 20) break;
                 $i++;
-                $l .= $i . ") ".$k." : ".$o."\n";
+                $l .= TextFormat::RED. $i . ") ".TextFormat::GREEN.$k.TextFormat::RED." : ".TextFormat::BLUE."Lv. ".$o."\n";
             }
-            $this->setNameTag("MCMMO Leaderboard\n".$a[$this->type] . "\n\n".$l);
+            $this->setNameTag(TextFormat::BOLD.TextFormat::AQUA."MCMMO Leaderboard\n".TextFormat::RESET.TextFormat::YELLOW.$a[$this->type].TextFormat::RESET . "\n\n".$l);
             foreach ($this->getViewers() as $player) {
                 $this->sendNameTag($player);
             }
