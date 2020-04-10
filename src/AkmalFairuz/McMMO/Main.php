@@ -150,6 +150,8 @@ class Main extends PluginBase implements Listener
             case Item::GRASS:
             case Item::GRASS_PATH:
             case Item::FARMLAND:
+            case Item::SAND:
+            case Item::GRAVEL:
                 $this->addXp(self::EXCAVATION, $player);
                 return;
             case Item::TALL_GRASS:
