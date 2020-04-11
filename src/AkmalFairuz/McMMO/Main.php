@@ -182,9 +182,11 @@ class Main extends PluginBase implements Listener
         }
         if($event->getEntity() instanceof FloatingText) {
             $event->setCancelled();
+            return;
         }
         if($event instanceof EntityDamageByEntityEvent) {
             $entity = $event->getEntity();
+            if(!$entity instanceof Player) return;
             $damager = $event->getDamager();
             if($damager instanceof Player) {
                 if (($entity->getHealth() - $event->getFinalDamage()) <= 0) {
