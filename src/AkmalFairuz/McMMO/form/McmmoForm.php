@@ -132,7 +132,7 @@ class McmmoForm
             $content .= $i.") ".$key . " : ".$as."\n";
             $i++;
         }
-        $form->setContent("Player Name | Level");
+        $form->setContent("Player Name | Level\n\n".$content);
         $form->addButton("Back");
         $form->sendToPlayer($player);
     }
