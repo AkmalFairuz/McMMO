@@ -72,6 +72,7 @@ class Main extends PluginBase implements Listener
     public function onDisable()
     {
         file_put_contents($this->getDataFolder() . "database.yml", yaml_emit($this->database));
+        sleep(3);
     }
 
     public function getXp(int $type, Player $player) : int {
