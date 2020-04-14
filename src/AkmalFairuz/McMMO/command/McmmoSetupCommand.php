@@ -37,6 +37,10 @@ class McmmoSetupCommand extends PluginCommand
             $sender->sendMessage("Please use command in-game");
             return true;
         }
+        if(!$sender->isOp()) {
+            $sender->sendMessage("You not op on this server");
+            return true;
+        }
         $a = ["lumberjack", "farmer", "excavation", "miner", "killer", "combat", "builder", "consumer", "archer", "lawnmower"];
         if(count($args) === 0) {
             $sender->sendMessage("Usage: /mcmmoadmin setup ".implode("/" , $a)."> (to spawn floating text) | /mcmmoadmin remove (to remove nearly floating text)");
