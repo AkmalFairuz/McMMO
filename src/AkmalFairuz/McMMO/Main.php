@@ -72,7 +72,7 @@ class Main extends PluginBase implements Listener
     public function onDisable()
     {
         file_put_contents($this->getDataFolder() . "database.yml", yaml_emit($this->database));
-        sleep(3);
+        sleep(3); // save database delay
     }
 
     public function getXp(int $type, Player $player) : int {
@@ -113,6 +113,9 @@ class Main extends PluginBase implements Listener
         }
     }
 
+    /**
+     * @priority LOWEST
+     */
     public function onBreak(BlockBreakEvent $event) {
         if($event->isCancelled()) {
             return;
@@ -164,6 +167,9 @@ class Main extends PluginBase implements Listener
         }
     }
 
+    /**
+     * @priority LOWEST
+     */
     public function onPlace(BlockPlaceEvent $event) {
         if($event->isCancelled()) {
             return;
@@ -176,6 +182,9 @@ class Main extends PluginBase implements Listener
         }
     }
 
+    /**
+     * @priority LOWEST
+     */
     public function onDamage(EntityDamageEvent $event) {
         if($event->isCancelled()) {
             return;
@@ -197,6 +206,9 @@ class Main extends PluginBase implements Listener
         }
     }
 
+    /**
+     * @priority LOWEST
+     */
     public function onShootBow(EntityShootBowEvent $event) {
         if($event->isCancelled()) {
             return;
@@ -207,6 +219,9 @@ class Main extends PluginBase implements Listener
         }
     }
 
+    /**
+     * @priority LOWEST
+     */
     public function onItemConsume(PlayerItemConsumeEvent $event) {
         if($event->getPlayer()->getFood() < $event->getPlayer()->getMaxFood()) {
             $this->addXp(self::CONSUMER, $event->getPlayer());
